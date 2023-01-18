@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 16930444749486473}
   - component: {fileID: 16930444749486472}
   - component: {fileID: 16930444749486477}
+  - component: {fileID: -2716054614692002316}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -112,7 +113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 16930444749486477}
-  dieReason: {fileID: 2508905865050325648, guid: ab7d32683d029c34d89e136376685679, type: 3}
+  speed: 2
+  SpeedPlayerVectical: 0
 --- !u!54 &16930444749486477
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,3 +131,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-2716054614692002316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16930444749486471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be10e95e3aaf0bf48b677e479a8dc289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
+  gameOverScoreText: {fileID: 0}
+  gameOverHiscoreText: {fileID: 0}

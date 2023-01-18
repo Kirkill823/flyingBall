@@ -8,18 +8,25 @@ public class velocity : MonoBehaviour
 {
 
     public Rigidbody rigidbody;
+    public float speed = 2;
+    public float SpeedPlayerVectical = 3f;
+    public GameObject playerGO;
 
-    private float speed = 2;
-    float SpeedPlayerVectical = 1;
-    bool IsDead = false;
+   private SceneLoader _sceneLoader;
 
+    private void Start()
+    {
+        _sceneLoader.GameStarted = true;
+        StartCoroutine(SpeedLevel());
+        _sceneLoader = GameObject.FindGameObjectWithTag("GameController").GetComponent<SceneLoader>();
+    }
     public void Update()
 
     {
-
+        
         if (Input.GetMouseButton(0))
         {
-            rigidbody.velocity = new Vector3(speed , 1.7f, 0);
+            rigidbody.velocity = new Vector3(speed , SpeedPlayerVectical, 0);
         }
         else
         {
@@ -36,14 +43,16 @@ public class velocity : MonoBehaviour
         StartCoroutine(SpeedLevel());
     }
 
-    public void StandartLevel() {SpeedPlayerVectical = 3f; }
-    public void MediumLevel() {SpeedPlayerVectical = 4.5f; speed = speed * 1.3f; }
-    public void MaximumLevel() {SpeedPlayerVectical = 6f; speed = speed * 1.6f; }
 
-    private void OnTriggerEnter()
-    {
-        IsDead = true;
-        Destroy(gameObject); 
-        Debug.Log("you die");
+    public void EasyLevel() {SpeedPlayerVectical = 3f;}
+    public void MediumLevel() {SpeedPlayerVectical = 4.5f; speed = 2.3f;}
+    public void HardLevel() {SpeedPlayerVectical = 6f; speed = 2.6f;}
+
+
+       private void OnTriggerEnter(Collider other)
+    {  
+          Debug.Log("you die");  
+          
+               
     }
 }

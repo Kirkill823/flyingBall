@@ -15,16 +15,27 @@ public class Spawn : MonoBehaviour
     void Start()
     {
 
-        y = Random.Range(3.030f, 5.5f);
-            d = player.position.x;
-            float x = d + 8.2f;
+       
+         StartCoroutine(ReSpawn());
 
-            Instantiate(Obstacle);
-            Obstacle.transform.position = new Vector3(x, y, -9.426793f);
 
-        
     }
-    
+    IEnumerator ReSpawn()
+    {
+        yield return new WaitForSecondsRealtime(5f);
+
+        y = Random.Range(3.030f, 6.5f);
+
+        d = player.position.x;
+        float x = d + 13.2f;
+
+        Instantiate(Obstacle);
+        Obstacle.transform.position = new Vector3(x, y, -9.426793f);
+
+
+        StartCoroutine(ReSpawn());
+    }
+
 }
 
-  
+

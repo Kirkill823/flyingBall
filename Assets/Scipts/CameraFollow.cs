@@ -13,7 +13,7 @@ public class CameraFollow : MonoBehaviour
         
             n = player.position.x;
             float i = n + 1.339232f;
-            transform.position = new Vector3(i, 4.44f, -15);
+            transform.position = new Vector3(i, 4.44f, -18.9f);
        
      }
 } 
